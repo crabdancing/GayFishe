@@ -1,12 +1,12 @@
 shader_type spatial;
 
-uniform float pivot_factor = 1.0;
-uniform float time_factor = 5.0;
+uniform float pivot_factor = 0.8;
+uniform float time_factor = 10.0;
 uniform float side_to_side_factor = 1.0;
 uniform float twist_factor = 1.0;
 uniform float wave_factor = 1.0;
 uniform float body_length = 2.0;
-uniform float mask_black = -0.8;
+uniform float mask_black = -1.0;
 uniform float mask_white = 1.0;
 
 void vertex() {

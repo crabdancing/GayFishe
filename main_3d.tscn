@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cexevkn0gw7ct"]
+
+[ext_resource type="Shader" path="res://main_3d.gdshader" id="1_bhvcm"]
+[ext_resource type="ArrayMesh" uid="uid://cskextikk5164" path="res://Fish1.obj" id="2_0te0b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a6ldy"]
+render_priority = 0
+shader = ExtResource("1_bhvcm")
+body_length = null
+mask_black = null
+mask_white = null
+pivot_factor = null
+side_to_side_factor = null
+time_factor = null
+twist_factor = null
+wave_factor = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_drh07"]
+
+[node name="Main3D" type="Node3D"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_a6ldy")
+material_overlay = SubResource("ShaderMaterial_drh07")
+mesh = ExtResource("2_0te0b")
+skeleton = NodePath("../MultiMeshInstance3d")
+
+[node name="MultiMeshInstance3d" type="MultiMeshInstance3D" parent="."]

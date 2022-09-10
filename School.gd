@@ -13,7 +13,7 @@ class FishData:
 		multimesh.instance_count 
 			
 
-# Old fish do not sync
+# Old fish data is lost
 var fish_data_array: Array = []
 
 func sync_fish():

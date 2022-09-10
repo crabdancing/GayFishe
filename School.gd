@@ -11,11 +11,17 @@ class FishData:
 		multimesh.set_instance_custom_data(num, custom_data)
 	func del_from_multimesh(multimesh: MultiMesh):
 		multimesh.instance_count 
-			
 
-# Old fish data is lost
+# holds CPU fish data for fish persistence when reloading the multimeshinstance
+# Useful for both changing the number of fish
+# ...and reloading its state between program launches,
+# if you really wanted to do that for some reason.
 var fish_data_array: Array = []
 
+# Old fish data is lost each time we change the number of fish instances
+# So we have to instance all the ones we want at the start,
+# or hold data in the CPU and iteratively sync it each time we change the number of fish
+# Naturally, I chose the most awkward solution! :P
 func sync_fish():
 	for fish in fish_data_array:
 		fish.sync_with_multimesh(multimesh)

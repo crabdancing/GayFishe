@@ -44,7 +44,6 @@ extra_cull_margin = 16384.0
 lod_bias = 128.0
 multimesh = SubResource("MultiMesh_emdg5")
 script = ExtResource("3_kxt7f")
-runtime_instance_count = null
 
 [node name="Camera3d" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.45898)

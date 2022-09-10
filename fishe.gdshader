@@ -9,7 +9,7 @@ uniform float body_length = 2.0;
 uniform float mask_black = -1.0;
 uniform float mask_white = 1.0;
 uniform float swim_factor = 5.0;
-uniform float swim_max = 100.0;
+uniform float swim_max = 55.0;
 
 varying vec4 FISH_COLOR;
 void vertex() {

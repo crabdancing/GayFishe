@@ -1,7 +1,7 @@
 @tool
 extends MultiMeshInstance3D
 
-@export var runtime_instances: int = 100.0
+@export var runtime_instances: int = 1000.0
 @onready var School: MultiMeshInstance3D = %School
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

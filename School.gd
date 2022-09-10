@@ -9,6 +9,9 @@ func set_num_fish(value: int):
 		set_fish(value)
 	num_fish = value
 
+func _ready() -> void:
+	sync_fish()
+	
 class FishData:
 	var custom_data: Color
 	var pos: Transform3D
@@ -31,8 +34,9 @@ var fish_data_array: Array = []
 # or hold data in the CPU and iteratively sync it each time we change the number of fish
 # Naturally, I chose the most awkward solution! :P
 func sync_fish():
-	for fish in fish_data_array:
-		fish.sync_with_multimesh(multimesh)
+	if len(fish_data_array) != 0:
+		for fish in fish_data_array:
+			fish.sync_with_multimesh(multimesh)
 		
 func add_fish() -> int:
 	var fish_data = FishData.new()

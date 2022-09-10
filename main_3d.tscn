@@ -23,7 +23,9 @@ wave_factor = null
 transform_format = 1
 use_colors = true
 use_custom_data = true
+instance_count = 6
 mesh = ExtResource("2_0te0b")
+buffer = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, -347.073, 0, 10, 0, 212.118, 0, 0, 10, -42.3037, 0, 0, 0, 0, 0.486523, 0.68153, 0.399253, 0.961051, 10, 0, 0, 10.3713, 0, 10, 0, 54.2854, 0, 0, 10, -63.2847, 0, 0, 0, 0, 0.263281, 0.499065, 0.313646, 0.168828, 10, 0, 0, -328.326, 0, 10, 0, -130.954, 0, 0, 10, 243.006, 0, 0, 0, 0, 0.712714, 0.560585, 0.821629, 0.996578, 10, 0, 0, 111.315, 0, 10, 0, 26.831, 0, 0, 10, -67.0054, 0, 0, 0, 0, 0.137367, 0.252259, 0.122766, 0.531599, 10, 0, 0, 323.75, 0, 10, 0, -3.03858, 0, 0, 10, 118.436, 0, 0, 0, 0, 0.574025, 0.766008, 0.0147026, 0.35041)
 
 [sub_resource type="Environment" id="Environment_e67o1"]
 background_mode = 1
@@ -44,6 +46,7 @@ extra_cull_margin = 16384.0
 lod_bias = 128.0
 multimesh = SubResource("MultiMesh_emdg5")
 script = ExtResource("3_kxt7f")
+num_fish = 5
 
 [node name="Camera3d" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.45898)

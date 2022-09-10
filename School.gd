@@ -1,6 +1,14 @@
 @tool
 extends MultiMeshInstance3D
 
+@export var num_fish: int = 100:
+	set = set_num_fish
+	
+func set_num_fish(value: int):
+	if value != num_fish:
+		set_fish(value)
+	num_fish = value
+
 class FishData:
 	var custom_data: Color
 	var pos: Transform3D
@@ -45,3 +53,18 @@ func del_fish() -> int:
 	multimesh.instance_count -= 1
 	fish_data_array.pop_back()
 	return multimesh.instance_count
+
+func set_fish(value: int) -> void:
+	var diff = value -  multimesh.instance_count + 1
+	if diff > 0:
+		print('add ', diff, ' fish')
+		for val in range(diff):
+			add_fish()
+		sync_fish()
+	elif diff == 0:
+		pass
+	elif diff < 0:
+		print('remove ', -diff, ' fish')
+		for val in range(-diff):
+			del_fish()
+	

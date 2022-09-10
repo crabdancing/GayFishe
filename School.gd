@@ -14,7 +14,6 @@ func _ready() -> void:
 					randf() * 50 - 20,
 					randf() * 50 - 20)
 				) * 10;
-		# School.multimesh.set_instance_custom_data(i, )
 		School.multimesh.set_instance_transform(i, pos)
 		School.multimesh.set_instance_custom_data(i, 
 			Color(randf(), randf(), randf(), randf())

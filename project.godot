@@ -15,6 +15,14 @@ run/main_scene="res://main_3d.tscn"
 config/features=PackedStringArray("4.0", "Vulkan Mobile")
 config/icon="res://icon.svg"
 
+[debug]
+
+settings/stdout/print_fps=true
+
+[display]
+
+window/vsync/vsync_mode=0
+
 [rendering]
 
 vulkan/rendering/back_end=1

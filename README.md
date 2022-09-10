@@ -1,2 +1,2 @@
 
-![pics/fishe.png](fishe)
+![image](pics/fishe.png)

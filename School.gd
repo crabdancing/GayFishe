@@ -11,8 +11,8 @@ func _ready() -> void:
 		var pos: Transform3D
 		pos = pos.translated(
 			Vector3(randf() * 100 - 50,
-					randf() * 50 - 25,
-					randf() * 50 - 25)
+					randf() * 50 - 20,
+					randf() * 50 - 20)
 				);
 		# School.multimesh.set_instance_custom_data(i, )
 		School.multimesh.set_instance_transform(i, pos)

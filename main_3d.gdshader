@@ -10,7 +10,7 @@ uniform float mask_black = -1.0;
 uniform float mask_white = 1.0;
 
 void vertex() {
-	float time = TIME * time_factor;
+	float time = TIME * (0.5 + INSTANCE_CUSTOM.y) * time_factor + 6.28318 * INSTANCE_CUSTOM.x;
 	// NOTE: fish MUST be centered on zero for this calculation to work!
 	// body tells us how far up the body we are...
 	// 0.5 for midway, 1.0 for its head, 0.0 for tail, etc

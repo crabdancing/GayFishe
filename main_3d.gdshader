@@ -8,8 +8,12 @@ uniform float wave_factor = 1.0;
 uniform float body_length = 2.0;
 uniform float mask_black = -1.0;
 uniform float mask_white = 1.0;
+uniform float swim_factor = 5.0;
+uniform float swim_max = 100.0;
 
+varying vec4 FISH_COLOR;
 void vertex() {
+	FISH_COLOR = INSTANCE_CUSTOM;
 	float time = TIME * (0.5 + INSTANCE_CUSTOM.y) * time_factor + 6.28318 * INSTANCE_CUSTOM.x;
 	// NOTE: fish MUST be centered on zero for this calculation to work!
 	// body tells us how far up the body we are...
@@ -39,5 +43,9 @@ void vertex() {
 		vec2(sin(twist_angle), cos(twist_angle))
 	);
 	VERTEX.xy = mix(VERTEX.xy, matrix_twist * VERTEX.xy, mask);
-	
+	VERTEX.z += mod(time, swim_max) * swim_factor;
+}
+
+void fragment() {
+	ALBEDO = FISH_COLOR.rgb;
 }

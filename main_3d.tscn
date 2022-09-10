@@ -45,16 +45,15 @@ runtime_instances = 100
 [node name="Camera3d" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 56.8948)
 
-[node name="DirectionalLight3d" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.957481, -0.288497, 0, 0.288497, 0.957481, -47.5611, -14.705, 43.0809)
-visible = false
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_e67o1")
 
 [node name="OmniLight3d" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 77.4802)
+light_color = Color(0.4, 0.572549, 0.988235, 1)
 light_energy = 16.0
 light_indirect_energy = 12.48
-light_volumetric_fog_energy = 13.927
+light_volumetric_fog_energy = 16.0
 light_size = 0.794
+omni_range = 4096.0
+omni_attenuation = 0.933033

@@ -2,11 +2,14 @@
 extends MultiMeshInstance3D
 
 @export var runtime_instances: int = 500.0
+var old_runtime_instances: int
 @onready var School: MultiMeshInstance3D = %School
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-#	if not Engine.is_editor_hint():
-#		School.multimesh.instance_count = runtime_instances
+	refresh_fish()
+	
+func refresh_fish():
+	School.multimesh.instance_count = runtime_instances
 	for i in range(School.multimesh.instance_count):
 		var pos: Transform3D
 		pos = pos.translated(
@@ -18,6 +21,10 @@ func _ready() -> void:
 		School.multimesh.set_instance_custom_data(i, 
 			Color(randf(), randf(), randf(), randf())
 		)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if old_runtime_instances != runtime_instances:
+		old_runtime_instances = runtime_instances
+		refresh_fish()
+

@@ -1,7 +1,7 @@
 @tool
 extends MultiMeshInstance3D
 
-@export var num_fish: int = 100:
+@export var num_fish: int = 5:
 	set = set_num_fish
 	
 func set_num_fish(value: int):
@@ -10,6 +10,7 @@ func set_num_fish(value: int):
 	num_fish = value
 
 func _ready() -> void:
+	set_fish(num_fish)
 	sync_fish()
 	
 class FishData:

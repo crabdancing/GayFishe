@@ -39,7 +39,7 @@ func sync_fish():
 		for fish in fish_data_array:
 			fish.sync_with_multimesh(multimesh)
 		
-func add_fish() -> int:
+func add_fish() -> int: 
 	var fish_data = FishData.new()
 	fish_data.num = len(fish_data_array) + 1
 	multimesh.instance_count = fish_data.num + 1
@@ -53,10 +53,10 @@ func add_fish() -> int:
 	return fish_data.num
 
 func del_fish() -> int:
-	if multimesh.instance_count <= 0:
-		return 0
-	multimesh.instance_count -= 1
-	fish_data_array.pop_back()
+	var last_fish: FishData = fish_data_array.pop_back()
+	if last_fish != null:
+		last_fish.del_from_multimesh(multimesh)
+		multimesh.instance_count -= 1
 	return multimesh.instance_count
 
 func set_fish(value: int) -> void:
